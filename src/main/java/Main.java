@@ -32,6 +32,7 @@ public class Main {
 
         System.out.println("------------------------------------------");
         System.out.println("Welcome to joel's barely average graph runner");
+        System.out.println("this is still a work in progress, so please bare with me if you see this");
         System.out.println("------------------------------------------");
 
 
@@ -48,13 +49,14 @@ public class Main {
             dungeonViewer.drawGame(game);
 
 
-
+            // todo: seperate into object
             System.out.println("Please enter your moves... (all invalid moves will be ignored)");
             input = reader.readLine();
             List<DoorDirection> moves = inputParser.parseInput(input);
 
 
 
+            // todo: seperate into object
             // use for loop to catch exception in correct thread
             for (DoorDirection move : moves) {
                 game.takeMove(move);
