@@ -1,4 +1,4 @@
-package dungeon.room;
+package dungeon.graph.room;
 
 import dungeon.graph.DoorDirection;
 

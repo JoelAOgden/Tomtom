@@ -1,8 +1,7 @@
 package dungeon.pixeliser;
 
 import dungeon.graph.IDungeonGraph;
-import dungeon.room.DungeonRoom;
-import java.util.List;
+import dungeon.graph.room.DungeonRoom;
 
 public interface IGraphPixeliser {
 

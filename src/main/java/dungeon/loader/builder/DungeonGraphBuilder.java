@@ -3,8 +3,8 @@ package dungeon.loader.builder;
 import dungeon.graph.DungeonGraph;
 import dungeon.graph.IDungeonGraph;
 import dungeon.loader.primitives.RoomPrimitive;
-import dungeon.room.DungeonDoor;
-import dungeon.room.DungeonRoom;
+import dungeon.graph.room.DungeonDoor;
+import dungeon.graph.room.DungeonRoom;
 import java.util.List;
 
 public class DungeonGraphBuilder implements IDungeonGraphBuilder {
@@ -20,7 +20,7 @@ public class DungeonGraphBuilder implements IDungeonGraphBuilder {
     @Override
     public IDungeonGraph buildFromPrimitives(List<RoomPrimitive> roomPrimitiveList) {
 
-        DungeonGraph graph = new DungeonGraph();
+        IDungeonGraph graph = new DungeonGraph();
 
         List<DungeonRoom> rooms = roomBuilder.buildRoomsFromPrimitives(roomPrimitiveList);
         List<DungeonDoor> doors = doorBuilder.buildDoors(rooms, roomPrimitiveList);
@@ -31,11 +31,11 @@ public class DungeonGraphBuilder implements IDungeonGraphBuilder {
         return graph;
     }
 
-    private void addRoomsToGraph(DungeonGraph graph,  List<DungeonRoom> rooms) {
+    private void addRoomsToGraph(IDungeonGraph graph,  List<DungeonRoom> rooms) {
         rooms.forEach(graph::addRoom);
     }
 
-    private void addDoorsToGraph(DungeonGraph graph, List<DungeonDoor> doors) {
+    private void addDoorsToGraph(IDungeonGraph graph, List<DungeonDoor> doors) {
         doors.forEach(it -> graph.addDoorConnection(it.entrance, it.direction, it));
     }
 

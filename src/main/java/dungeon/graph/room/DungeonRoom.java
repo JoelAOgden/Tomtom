@@ -1,4 +1,4 @@
-package dungeon.room;
+package dungeon.graph.room;
 
 // todo: hide behind interface
 public class DungeonRoom {

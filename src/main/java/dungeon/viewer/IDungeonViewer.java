@@ -1,9 +1,13 @@
 package dungeon.viewer;
 
-import dungeon.game.IGame;
+import dungeon.graph.DoorDirection;
+import dungeon.graph.IDungeonGraph;
+import dungeon.graph.room.DungeonRoom;
+import java.util.List;
 
 public interface IDungeonViewer {
 
-    void drawGame(IGame game);
+    void drawIntroduction();
+    void drawGameState(DungeonRoom currentRoom, List<DoorDirection> possibleMoves, IDungeonGraph graph);
 
 }

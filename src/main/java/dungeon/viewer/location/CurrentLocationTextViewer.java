@@ -1,8 +1,8 @@
 package dungeon.viewer.location;
 
-import dungeon.room.DungeonRoom;
+import dungeon.graph.room.DungeonRoom;
 
-public class CurrentLocationViewer implements ICurrentLocationViewer {
+public class CurrentLocationTextViewer implements ICurrentLocationViewer {
 
     @Override
     public void drawCurrentLocation(DungeonRoom currentLocation) {

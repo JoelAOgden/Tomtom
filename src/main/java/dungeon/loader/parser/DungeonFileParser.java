@@ -20,7 +20,7 @@ public class DungeonFileParser {
         FileReader fileReader = new FileReader(fileURL);
         BufferedReader bufferedReader = new BufferedReader(fileReader);
 
-        // build dungeon.room pool
+        // build dungeon.graph.room pool
         List<RoomPrimitive> primitiveRooms = new ArrayList<>();
         String line;
         while ((line = bufferedReader.readLine()) != null) {

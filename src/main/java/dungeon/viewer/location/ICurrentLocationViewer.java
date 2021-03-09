@@ -1,6 +1,6 @@
 package dungeon.viewer.location;
 
-import dungeon.room.DungeonRoom;
+import dungeon.graph.room.DungeonRoom;
 
 public interface ICurrentLocationViewer {
 

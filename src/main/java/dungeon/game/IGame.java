@@ -1,13 +1,8 @@
 package dungeon.game;
 
-import dungeon.graph.DoorDirection;
-import dungeon.graph.DungeonGraph;
-import dungeon.graph.IDungeonGraph;
-import dungeon.room.DungeonRoom;
-import exceptions.RoomNotFoundException;
+import exceptions.UnknownInputException;
+import java.io.IOException;
 
 public interface IGame {
-    void takeMove(DoorDirection movementDirection) throws RoomNotFoundException;
-    DungeonRoom getCurrentRoom();
-    IDungeonGraph getGraph();
+    void start() throws IOException, UnknownInputException;
 }

@@ -2,12 +2,11 @@ package dungeon.pixeliser;
 
 import dungeon.graph.DoorDirection;
 import dungeon.graph.IDungeonGraph;
-import dungeon.room.DungeonDoor;
-import dungeon.room.DungeonRoom;
+import dungeon.graph.room.DungeonDoor;
+import dungeon.graph.room.DungeonRoom;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
 

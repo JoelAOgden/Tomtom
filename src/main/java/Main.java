@@ -1,9 +1,10 @@
+import dungeon.controller.IGameController;
+import dungeon.controller.PlayerConsoleController;
 import dungeon.game.DungeonGame;
 import dungeon.game.IGame;
-import dungeon.graph.DoorDirection;
 import dungeon.graph.IDungeonGraph;
-import dungeon.input.IInputParser;
-import dungeon.input.InputParser;
+import dungeon.controller.input.ITextInputParser;
+import dungeon.controller.input.PlayerTextInputParser;
 import dungeon.loader.builder.DoorBuilder;
 import dungeon.loader.builder.DungeonGraphBuilder;
 import dungeon.loader.builder.IDungeonGraphBuilder;
@@ -13,10 +14,12 @@ import dungeon.loader.parser.DungeonFileParser;
 import dungeon.loader.primitives.RoomPrimitive;
 import dungeon.viewer.DungeonTextViewer;
 import dungeon.viewer.IDungeonViewer;
-import dungeon.viewer.location.CurrentLocationViewer;
+import dungeon.viewer.location.CurrentLocationTextViewer;
 import dungeon.viewer.location.ICurrentLocationViewer;
+import dungeon.viewer.map.IMapViewer;
+import dungeon.viewer.map.MapTextViewer;
 import dungeon.viewer.possiblemove.IPossibleMoveViewer;
-import dungeon.viewer.possiblemove.PossibleMoveViewer;
+import dungeon.viewer.possiblemove.PossibleMoveTextViewer;
 import exceptions.RoomNotFoundException;
 import exceptions.UnknownInputException;
 import java.io.BufferedReader;
@@ -26,43 +29,27 @@ import java.util.List;
 
 public class Main {
 
-    static IInputParser inputParser = new InputParser();
+    // TODO: set up java build
+    // TODO: handle invalid input (instead of ignoreing)
+    // TODO: create map pixelisation
+    // TODO: create view tests
+
+
+
 
     public static void main(String[] args) throws IOException, UnknownInputException, RoomNotFoundException {
-
-        System.out.println("------------------------------------------");
-        System.out.println("Welcome to joel's barely average graph runner");
-        System.out.println("this is still a work in progress, so please bare with me if you see this");
-        System.out.println("------------------------------------------");
 
 
         String file = Main.class.getResource("/dungeon_1.txt").getFile();
 
         IDungeonGraph graph = loadFileToGraph(file);
         IDungeonViewer dungeonViewer = buildViewer();
+        IGameController gameController = buildGameController();
 
-        IGame game = new DungeonGame(graph);
+        IGame game = new DungeonGame(graph, dungeonViewer, gameController);
 
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        String input = "";
-        while (!input.equals("exit") ) {
-            dungeonViewer.drawGame(game);
+        game.start();
 
-
-            // todo: seperate into object
-            System.out.println("Please enter your moves... (all invalid moves will be ignored)");
-            input = reader.readLine();
-            List<DoorDirection> moves = inputParser.parseInput(input);
-
-
-
-            // todo: seperate into object
-            // use for loop to catch exception in correct thread
-            for (DoorDirection move : moves) {
-                game.takeMove(move);
-            }
-
-        }
 
     }
 
@@ -84,8 +71,16 @@ public class Main {
     // TODO: put behind a builder
     private static IDungeonViewer buildViewer() {
 
-        ICurrentLocationViewer locationViewer = new CurrentLocationViewer();
-        IPossibleMoveViewer possibleMoveViewer = new PossibleMoveViewer();
-        return new DungeonTextViewer(locationViewer, possibleMoveViewer);
+        ICurrentLocationViewer locationViewer = new CurrentLocationTextViewer();
+        IPossibleMoveViewer possibleMoveViewer = new PossibleMoveTextViewer();
+        IMapViewer mapViewer = new MapTextViewer();
+        return new DungeonTextViewer(locationViewer, possibleMoveViewer, mapViewer);
+    }
+
+    // TODO: put behind a builder
+    private static IGameController buildGameController() {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        ITextInputParser inputParser = new PlayerTextInputParser();
+        return new PlayerConsoleController(inputParser, reader);
     }
 }

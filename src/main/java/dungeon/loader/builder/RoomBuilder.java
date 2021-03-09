@@ -1,7 +1,7 @@
 package dungeon.loader.builder;
 
 import dungeon.loader.primitives.RoomPrimitive;
-import dungeon.room.DungeonRoom;
+import dungeon.graph.room.DungeonRoom;
 import java.util.List;
 import java.util.stream.Collectors;
 

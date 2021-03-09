@@ -1,7 +1,6 @@
 package dungeonfile.parser;
 
 import dungeon.loader.primitives.RoomPrimitive;
-import dungeon.room.DungeonRoom;
 import dungeon.loader.parser.DungeonFileLineParser;
 import org.junit.Test;
 

@@ -3,8 +3,8 @@ package dungeon.loader.builder;
 
 import dungeon.graph.DoorDirection;
 import dungeon.loader.primitives.RoomPrimitive;
-import dungeon.room.DungeonDoor;
-import dungeon.room.DungeonRoom;
+import dungeon.graph.room.DungeonDoor;
+import dungeon.graph.room.DungeonRoom;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;

@@ -1,11 +1,10 @@
 package dungeon.viewer.possiblemove;
 
-import dungeon.graph.DungeonGraph;
-import dungeon.graph.IDungeonGraph;
-import dungeon.room.DungeonRoom;
+import dungeon.graph.DoorDirection;
+import java.util.List;
 
 public interface IPossibleMoveViewer {
 
-    void drawPossibleMoves(DungeonRoom currentLocation, IDungeonGraph graph);
+    void drawPossibleMoves(List<DoorDirection> possibleMoves);
 
 }

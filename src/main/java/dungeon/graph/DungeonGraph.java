@@ -1,7 +1,7 @@
 package dungeon.graph;
 
-import dungeon.room.DungeonDoor;
-import dungeon.room.DungeonRoom;
+import dungeon.graph.room.DungeonDoor;
+import dungeon.graph.room.DungeonRoom;
 import exceptions.RoomNotFoundException;
 import java.util.HashMap;
 import java.util.HashSet;
