@@ -4,6 +4,7 @@ import dungeon.loader.primitives.RoomPrimitive;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,9 +16,9 @@ public class DungeonFileParser {
         this.dungeonFileLineParser = dungeonFileLineParser;
     }
 
-    public List<RoomPrimitive> loadFileToRoomPrimitives(String fileURL) throws IOException {
+    public List<RoomPrimitive> loadFileToRoomPrimitives(URL fileURL) throws IOException {
 
-        FileReader fileReader = new FileReader(fileURL);
+        FileReader fileReader = new FileReader(fileURL.getFile());
         BufferedReader bufferedReader = new BufferedReader(fileReader);
 
         // build dungeon.graph.room pool

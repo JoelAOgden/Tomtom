@@ -20,11 +20,11 @@ import dungeon.viewer.map.IMapViewer;
 import dungeon.viewer.map.MapTextViewer;
 import dungeon.viewer.possiblemove.IPossibleMoveViewer;
 import dungeon.viewer.possiblemove.PossibleMoveTextViewer;
-import exceptions.RoomNotFoundException;
 import exceptions.UnknownInputException;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.net.URL;
 import java.util.List;
 
 public class Main {
@@ -33,7 +33,7 @@ public class Main {
     public static void main(String[] args) throws IOException, UnknownInputException {
 
 
-        String file = Main.class.getResource("/dungeon_1.txt").getFile();
+        URL file = Main.class.getResource("/dungeon_1.txt");
 
         IDungeonGraph graph = loadFileToGraph(file);
         IDungeonViewer dungeonViewer = buildViewer();
@@ -46,7 +46,7 @@ public class Main {
 
     }
 
-    private static IDungeonGraph loadFileToGraph(String file) throws IOException {
+    private static IDungeonGraph loadFileToGraph(URL file) throws IOException {
         System.out.println("loading file: " + file);
 
         DungeonFileLineParser dungeonFileLineParser = new DungeonFileLineParser();

@@ -22,20 +22,37 @@ public class DungeonTextViewer implements IDungeonViewer {
 
     @Override
     public void drawIntroduction() {
-        System.out.println("------------------------------------------");
-        System.out.println("Welcome to joel's barely average graph runner");
-        System.out.println("this is still a work in progress, so please bare with me if you see this");
-        System.out.println("------------------------------------------");
+
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println("        ░██╗░░░░░░░██╗███████╗██╗░░░░░░█████╗░░█████╗░███╗░░░███╗███████╗");
+        System.out.println("        ░██║░░██╗░░██║██╔════╝██║░░░░░██╔══██╗██╔══██╗████╗░████║██╔════╝");
+        System.out.println("        ░╚██╗████╗██╔╝█████╗░░██║░░░░░██║░░╚═╝██║░░██║██╔████╔██║█████╗░░");
+        System.out.println("        ░░████╔═████║░██╔══╝░░██║░░░░░██║░░██╗██║░░██║██║╚██╔╝██║██╔══╝░░");
+        System.out.println("        ░░╚██╔╝░╚██╔╝░███████╗███████╗╚█████╔╝╚█████╔╝██║░╚═╝░██║███████╗");
+        System.out.println("        ░░░╚═╝░░░╚═╝░░╚══════╝╚══════╝░╚════╝░░╚════╝░╚═╝░░░░░╚═╝╚══════╝");
+        System.out.println("------------------------------------------------------------------------------------");
+        System.out.println("                      to joel's barely average graph runner");
+        System.out.println("                         this is still a work in progress");
+        System.out.println("                               There WILL be bugs");
+        System.out.println("------------------------------------------------------------------------------------");
+        System.out.println();
+        System.out.println("                                █▀▀ █▄░█ ░░█ █▀█ █▄█");
+        System.out.println("                                ██▄ █░▀█ █▄█ █▄█ ░█░");
+
     }
 
     @Override
     public void drawGameState(DungeonRoom currentRoom, List<DoorDirection> possibleMoves, IDungeonGraph graph) {
-        System.out.println("-----------------------");
-        System.out.println("Dungeon Map");
+        System.out.println("");
+        System.out.println("    Dungeon Map");
         mapViewer.drawMap(currentRoom, graph);
-        System.out.println("-----------------------");
+        System.out.println("");
         locationViewer.drawCurrentLocation(currentRoom);
         possibleMoveViewer.drawPossibleMoves(possibleMoves);
+        System.out.println("");
+        System.out.println("------------------------------------------------------------------------------------");
     }
 
 
