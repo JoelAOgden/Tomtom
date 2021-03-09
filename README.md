@@ -1,18 +1,18 @@
-If you're reading this, this became a HUGE project
-I imagine I have gone a little over board in the separation of things, but proper coding
-practises say I have to :P (that's my excuse, the truth is I found it fun).
-There are going to be a bunch of quick cheap sections of code (like using .get() on optionals)
-simply because I have to choose two:
+If you're reading this, this became a much larger project then I suspected.
 
-1. Building the perfect coding assignment. 
-2. Having functional code.
-3. Getting sleep :P.
+In order to get it functional in time I have had to cute a few corners.
+
+I choose not to test the view or the user input. This has resulted in a seemingly 
+lack of testing, everything important has tests but things like system input and output
+is difficult to test and I felt it was more important to get things running and usable.
+
+Sadly due to the gradle daemon not functioning with the console. You will need to run this
+through your IDE. I will build the Jar to fix this asap.
 
 Sadly I didn't have enough time at the point of writing this to implement a few things,
 I will try to complete these before thursday either way.
 
-
-    // TODO: set up java build properly (including gradle)
+    // TODO: set up java jar build properly (including gradle)
     // TODO: handle invalid input (instead of ignoreing)
     // TODO: create map pixelisation
     // TODO: draw map

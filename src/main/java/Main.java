@@ -30,7 +30,7 @@ import java.util.List;
 public class Main {
 
 
-    public static void main(String[] args) throws IOException, UnknownInputException, RoomNotFoundException {
+    public static void main(String[] args) throws IOException, UnknownInputException {
 
 
         String file = Main.class.getResource("/dungeon_1.txt").getFile();
