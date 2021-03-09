@@ -29,13 +29,6 @@ import java.util.List;
 
 public class Main {
 
-    // TODO: set up java build
-    // TODO: handle invalid input (instead of ignoreing)
-    // TODO: create map pixelisation
-    // TODO: create view tests
-
-
-
 
     public static void main(String[] args) throws IOException, UnknownInputException, RoomNotFoundException {
 
