@@ -1,6 +1,6 @@
 
 ###Run with:
-`./gradlew run --console=plain`
+`gradle run --console=plain`
 
 -------
 This became a much larger project then I suspected.
